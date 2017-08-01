@@ -1,46 +1,30 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
+var express = require('express')
 
 var app = express();
+// The next() function is not a part of the Node.js or Express API, but is the third argument that is passed to the middleware function
+var myLogger1 = function(req, res, next) {
+	console.log('LOGGED 1');
+	next();
+}
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+var myLogger2 = function(req, res, next) {
+	console.log('LOGGED 2');
+	next();
+}
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// To load the middleware function, call app.use(), specifying the middleware function
+app.use(myLogger2);
+app.get('/', function(req, res) {
+	res.send('rendering home page');
+})
 
-app.use('/', index);
-app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// If myLogger1 is loaded after the route to the root path, the request never reaches it and the app doesn’t print “LOGGED”, because the route handler of the root path terminates the request-response cycle.
+app.use(myLogger1);
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// middleware file    my-middleware.js
+var myMiddleware = require('./middleware/my-middleware');
+app.use(myMiddleware({'name':'Baron', 'age' : '6'}));
 
 module.exports = app;
