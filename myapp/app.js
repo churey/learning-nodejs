@@ -1,46 +1,62 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var app = express()
 
-var app = express();
+// route handler
+app.get('/', function(req, res){
+	res.send('hello world')
+}) 
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.post('/', function(req, res) {
+	res.send('POST request received');
+})
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.all('/secret', function (req, res, next) {
+  console.log('Accessing the secret section ...')
+  // next() // pass control to the next handler
+  res.send('aaaa');
+})
 
-app.use('/', index);
-app.use('/users', users);
+// regular expression
+// This route path will match /abe and /abcde.
+app.get('/ab(cd)?e', function (req, res) {
+  res.send('ab(cd)?e')
+})
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// This route path will match butterfly and dragonfly, but not butterflyman, dragonflyman, and so on.
+app.get(/.*fly$/, function (req, res) {
+  res.send('/.*fly$/')
+})
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// parameters, polulate the route parameters to req.params(json object)
+app.get('/users/:userId/books/:bookId', function(req, res) {
+	res.send(req.params);
+})
+
+// next usage, multi callback
+app.get('/example/b', function(req, res, next) {
+	console.log('the response will continue to the next function...')
+	next()
+}, function(req, res) {
+	res.send('Hello from b')
+})
+
+
+// must use some kind of res.send() to terminate the request-response cycle, or the client request will be left hanging
+
+
+// route chain
+app.route('/book')
+	.get(function(req, res) {
+		res.send('GET book')
+	})
+	.post(function(req, res){
+		res.send('POST book')
+	})
+
+// express.Route   birds.js
+var birds = require('./routes/birds');
+app.use('/birds1', birds)
 
 module.exports = app;
