@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
+// Express-compliant template engines such as Jade and Pug export a function named __express(filePath, options, callback), which is called by the res.render() function to render the template code.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
