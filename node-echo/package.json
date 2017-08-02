@@ -1,0 +1,4 @@
+{
+	"name": "node-echo",
+	"main": "./lib/eco"
+}
