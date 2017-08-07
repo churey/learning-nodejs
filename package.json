@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "lodash": "^4.17.4",
     "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "start": "npm run build",
+    "build": "webpack -p && webpack-dev-server"
   },
   "repository": {
     "type": "git",
