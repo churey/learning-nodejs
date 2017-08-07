@@ -1,0 +1,23 @@
+{
+  "name": "learning-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack-dev-server": "^2.6.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/churey/learning-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/churey/learning-nodejs/issues"
+  },
+  "homepage": "https://github.com/churey/learning-nodejs#readme"
+}
