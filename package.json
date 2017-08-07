@@ -1,0 +1,27 @@
+{
+  "name": "learning-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "csv-loader": "^2.1.1",
+    "style-loader": "^0.18.2",
+    "webpack-dev-server": "^2.6.1",
+    "xml-loader": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/churey/learning-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/churey/learning-nodejs/issues"
+  },
+  "homepage": "https://github.com/churey/learning-nodejs#readme"
+}
