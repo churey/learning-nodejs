@@ -5,12 +5,16 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "css-loader": "^0.28.4",
     "lodash": "^4.17.4",
+    "style-loader": "^0.18.2",
     "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
-    "start": "npm run build",
-    "build": "webpack -p && webpack-dev-server"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "server": "node server.js",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
