@@ -9,8 +9,9 @@
     "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
-    "start": "npm run build",
-    "build": "webpack -p && webpack-dev-server"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
