@@ -1,27 +1,39 @@
 var step1 = function() {
 	return new Promise(function(resolve, reject) {
-		console.log("step1");
-		resolve("success")
+		setTimeout(function() {
+			console.log('step1 timeout'); 
+			resolve("success");
+		}, 10000);
+		// console.log("step1");
+		//resolve("success")
 	})
 }
 
 
 var step2 = function(data) {
-	setTimeout(function() {
-		console.log("step2 input:" + data);
-	}, 1000)
+	console.log('step2 start');
+	return new Promise(function(resolve, reject){
+		setTimeout(function() {
+			console.log("step2 input:" + data);
+			resolve("success");
+		}, 5000);
+	})
 }
 var step3 = function() {
+	console.log('step3 start');
 	setTimeout(function() {
 		console.log("step3");
 	}, 1000)
 }
 var step4 = function() {
+	console.log('step4 start');
 	setTimeout(function() {
 		console.log("step4");
 	}, 1000)
 }
-step1()
-	.then(step2)
-	.then(step3)
-	.then(step4)
+//step1()
+//	.then(step2)
+//	.then(step3)
+//	.then(step4)
+step1().then(step2);
+//Promise.all([step2("hello step2 promise")]).then(step3);
