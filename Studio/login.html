@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Oracle Login COPY</title>
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="./main.css">
 	</head>
 	<body class="bdd controls-visible non-touch private-page eid-login-body ext-webkit ext-chrome" style="" id="ext-gen5">
 	   <div id="language_id" lang="en-GB">
@@ -37,14 +37,15 @@
 								</div>
 								<div class="eid-login-content">
 								   <div class="eid-login-content-bounds">
-									  <div class="ctrl-holder">	<input title="Email Address" id="_58_dummyLogin" name="_58_dummyLogin" type="text" value="admin@oracle.com" autocomplete="off" placeholder="Email Address">	</div>
-									  <div class="ctrl-holder">	<input placeholder="Password" title="Password" id="_58_dummyPassword" name="_58_dummyPassword" type="password" value="" autocomplete="off">	</div>
+									  
+									  <form autocomplete="off" action="/loginAction" class="uni-form" method="post" name="_58_fm" id="_58_fm">
+										 <div class="ctrl-holder">	<input title="Email Address" id="_58_dummyLogin" name="emailAddress" type="text" value="admin@oracle.com" autocomplete="off" placeholder="Email Address">	</div>
+									  <div class="ctrl-holder">	<input placeholder="Password" title="Password" id="_58_dummyPassword" name="password" type="password" value="" autocomplete="off">	</div>
 									  <div class="eid-login-text-option" id="_58_passwordCapsLockSpan" style="display: none;">	Caps Lock is on.	</div>
-									  <form autocomplete="off" action="http://busgf06.us.oracle.com:7003/bdd/web/home/login?p_p_id=58&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Flogin" class="uni-form" method="post" name="_58_fm" id="_58_fm">
-										 <input id="_58_login" name="_58_login" type="hidden">	<input id="_58_password" name="_58_password" type="hidden">	
 										 <div class="eid-login-footer-options">
 											<div class="eid-login-button-holder">	<span class="eid-btn-action"><button type="submit" class="x-btn-text" value="Sign In">	Sign In	</button></span>	</div>
 										 </div>
+										 <input name="companyId" type="text" value="10073" type="hidden" style="display: none" />
 									  </form>
 								   </div>
 								</div>

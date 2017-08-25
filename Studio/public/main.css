@@ -1,0 +1,262 @@
+html {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    overflow: hidden;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 17px;
+    height: 17px;
+    background: #fff;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: #F2F2F2;
+    border: 1px solid #DFE2E5;
+    border-left: none;
+    border-top: none;
+}
+
+.eid-login-body {
+    background-color: #00838f;
+    background-image: url(images/eid-default-images/portlets/login/bg_login.png);
+    background-repeat: no-repeat;
+    background-position: center 20%;
+}
+
+.controls-visible {
+    min-width: 600px;
+}
+
+body {
+    font-size: .6875rem;
+    color: #2e3337;
+    height: 100%;
+    overflow: hidden;
+}
+
+.eid-login-wrapper {
+    min-width: 840px!important;
+    height: 100%;
+}
+
+#lfr-dock-container {
+    z-index: 4000;
+    position: absolute;
+    right: 3px;
+    top: 0;
+}
+
+#lfr-dock-container .lfr-dock {
+    float: right;
+    position: relative;
+}
+
+.lfr-dock.with-menu {
+    z-index: 102;
+}
+
+#lfr-dock-container .with-menu h2 {
+    padding-right: 0;
+}
+
+#lfr-dock-container h2 {
+    display: table-cell;
+    font-size: .75rem;
+    height: 32px;
+    padding: 5px 9px 3px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+.portlet {
+    position: relative;
+    text-align: left;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    background: #fff;
+    margin-bottom: 0;
+}
+
+#eid-login-dock #lfr-dock-container .settings-dock-icon, #eid-login-dock #lfr-dock-container .user-menu-icon, #eid-login-dock #lfr-dock-container .documentation-dock-icon {
+    color: #fff;
+}
+
+#lfr-dock-container .settings-dock-icon, #lfr-dock-container .user-menu-icon {
+    width: 2rem;
+}
+
+#lfr-dock-container .documentation-dock-icon, #lfr-dock-container .notifications-dock-icon {
+    width: 1.375rem;
+}
+
+#lfr-dock-container .settings-dock-icon, #lfr-dock-container .user-menu-icon, #lfr-dock-container .documentation-dock-icon, #lfr-dock-container .notifications-dock-icon {
+    display: block;
+    color: #70777d;
+    border: 1px solid transparent;
+    line-height: 1.375rem;
+    height: 1.375rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.oj-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.login-portlet-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+}
+
+.portlet-login.portlet-boundary {
+    margin: 0 auto;
+    width: 520px;
+    border: 1px solid rgba(255,255,255,0.67);
+}
+
+.portlet-login .portlet {
+    width: 500px;
+    min-height: 200px;
+    border: 10px solid rgba(255,255,255,0.33);
+    background-clip: padding-box;
+}
+
+.portlet-login .portlet-content {
+    padding: 20px 50px 30px;
+}
+
+.portlet-content {
+    padding: 10px 15px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.portlet-login h1 .eid-logo-oracle-140 {
+    vertical-align: -6px;
+    margin-right: 12px;
+    height: 20px;
+    width: 140px;
+    background-image: url(images/eid-default-images/common/logotype_140_oracle.png);
+}
+
+.portlet-login .eid-login-content {
+    padding: 10px 10px 0;
+}
+
+.portlet-login .eid-login-content .ctrl-holder {
+    padding: 8px 0;
+}
+
+
+.portlet-login .eid-login-content input[type=text], .portlet-login .eid-login-content input[type=password] {
+    width: 368px;
+}
+
+input[type="text"], input[type="password"], input[type="file"], .x-form-text, textarea, textarea.x-form-field, .x-form-textarea {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    font-size: 11px;
+    font-family: Helvetica,Arial,sans-serif;
+    background-color: #fff;
+    padding: 2px 3px 2px 3px;
+    margin: 2px;
+    margin-right: 5px;
+    line-height: 16px;
+    width: 150px;
+    color: #2e3337;
+}
+
+.portlet-login .eid-login-content .eid-login-text-option {
+    padding: 0 3px 3px 33px;
+}
+
+.uni-form {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.eid-login-footer-options {
+    float: left;
+    width: 100%;
+    position: relative;
+    clear: both;
+    min-height: 33px;
+}
+
+.portlet-login .eid-login-content .eid-login-button-holder {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+button[type="submit"], input[type="submit"] {
+    color: #fff;
+    background-color: #54bdc1;
+    border-color: #54bdc1;
+}
+
+.x-btn button, button.x-btn-text {
+    min-width: 0;
+    height: 2em;
+    margin: 2px 3px;
+}
+
+
+.eid-login-footer .eid-pipe {
+    margin: -2px 3px 0 3px;
+}
+
+.eid-pipe {
+    font-size: 12px;
+    line-height: 10px;
+    margin: -2px 3px 0 10px;
+}
+
+.eid-login-footer {
+    position: absolute;
+    width: auto;
+    margin: 15px;
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+    white-space: nowrap;
+    color: #8dd9da;
+}
+
+.eid-logo {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    text-overflow: hidden;
+    text-indent: 200%;
+    white-space: nowrap;
+    display: inline-block;
+}
+.portlet-login h1 {
+    font-weight: normal;
+    font-size: 25px;
+    color: #8d9499;
+}
