@@ -6,17 +6,18 @@ module.exports = {
     path: __dirname + '/dist',
     filename: "bundle.js"
   },
+  devtool: 'source-map',
   plugins: [new HtmlWebpackPlugin()],
   module: {
     rules: [{
-      test: /\.scss$/,
-      use: [{
-        loader: "style-loader"
-      }, {
-        loader: "css-loader"
-      }, {
-        loader: "sass-loader"
-      }]
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
     }]
   }
 }
