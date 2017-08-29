@@ -3,9 +3,9 @@ var step1 = function() {
 		setTimeout(function() {
 			console.log('step1 timeout'); 
 			resolve("success");
-		}, 10000);
+		}, 5000);
 		// console.log("step1");
-		//resolve("success")
+		// resolve("success")
 	})
 }
 
@@ -16,7 +16,7 @@ var step2 = function(data) {
 		setTimeout(function() {
 			console.log("step2 input:" + data);
 			resolve("success");
-		}, 5000);
+		}, 2000);
 	})
 }
 var step3 = function() {
